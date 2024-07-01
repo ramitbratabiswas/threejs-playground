@@ -23,31 +23,35 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.1;
 
-const box = new three.BoxGeometry(1.2, 1.2, 1.2, 5, 5, 5);
-const boxMat = new three.MeshStandardMaterial({
-  color: 0x0ff0f0
+const loader = new three.TextureLoader();
+
+const earthGroup = new three.Group();
+earthGroup.rotation.z = -23.4 * Math.PI / 180;
+scene.add(earthGroup);
+const earth = new three.IcosahedronGeometry(0.7, 10);
+const earthMat = new three.MeshStandardMaterial({
+  map: loader.load("./earthmap1k.jpg")
 })
-const boxMesh = new three.Mesh(box, boxMat);
-scene.add(boxMesh);
+const earthMesh = new three.Mesh(earth, earthMat);
+earthGroup.add(earthMesh);
 
 const wireMat = new three.MeshBasicMaterial({
   color: 0xffffff,
   wireframe: true,
 });
 
-const wireMesh = new three.Mesh(box, wireMat);
+const wireMesh = new three.Mesh(earth, wireMat);
 wireMesh.scale.setScalar(1.001);
-boxMesh.add(wireMesh);
+//earthMesh.add(wireMesh);
 
-const hemilight = new three.HemisphereLight(0x202022, 0xa0afff);
+const hemilight = new three.HemisphereLight(0xffffff, 0x444444);
 scene.add(hemilight);
 
 renderer.render(scene, camera);
 
-function animate(t = 0) {
+function animate(t) {
   requestAnimationFrame(animate);
-  boxMesh.rotation.x = t*0.002;
-  boxMesh.rotation.y = t*0.002;
+  earthMesh.rotation.y = t * 0.0002;
   renderer.render(scene, camera);
   controls.update();
 }
