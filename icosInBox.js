@@ -25,13 +25,13 @@ controls.dampingFactor = 0.1;
 
 const icos = new three.IcosahedronGeometry(0.8,10);
 const mat = new three.MeshStandardMaterial({
-  color: 0xffffff,
-  metalness: 0.9,
-  roughness: 0.3
+  color: 0x7011ff,
+  metalness: 1,
+  roughness: 0.5
 })
 const box = new three.BoxGeometry(4, 4, 4, 5, 5, 5);
 const boxMat = new three.MeshStandardMaterial({
-  metalness: 0.9,
+  metalness: 0.7,
   roughness: 0.2,
   color: 0xffffff,
   side: three.DoubleSide,
@@ -51,8 +51,6 @@ const wireMat = new three.MeshBasicMaterial({
 const wireMesh = new three.Mesh(icos, wireMat);
 const wireMesh2 = new three.Mesh(box, wireMat);
 wireMesh.scale.setScalar(1.001);
-mesh.add(wireMesh);
-boxMesh.add(wireMesh2);
 
 // const hemilight = new three.HemisphereLight(0x202022, 0xa0afff);
 // scene.add(hemilight);
@@ -68,16 +66,15 @@ scene.add(pointlight2);
 pointlight2.castShadow = true;
 pointlight2.position.set(1.8, 1.8, 1.8);
 
-// const directionalLight = new three.DirectionalLight(0x0000ff, 20);
-// directionalLight.position.set(1, 1, 1);
-// directionalLight.castShadow = true;
-// scene.add(directionalLight);
+const directionalLight = new three.DirectionalLight(0xffffff, 10);
+directionalLight.position.set(1, 1, 1);
+directionalLight.castShadow = true;
+scene.add(directionalLight);
 
 renderer.render(scene, camera);
 
 function animate(t = 0) {
   requestAnimationFrame(animate);
-  mesh.rotation.y = t*0.0004;
   renderer.render(scene, camera);
   controls.update();
 }
