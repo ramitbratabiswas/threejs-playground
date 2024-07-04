@@ -25,15 +25,15 @@ controls.dampingFactor = 0.1;
 
 const icos = new three.IcosahedronGeometry(0.8,10);
 const mat = new three.MeshStandardMaterial({
-  color: 0x7011ff,
-  metalness: 1,
+  color: 0x808080,
+  metalness: 0.5,
   roughness: 0.5
 })
 const box = new three.BoxGeometry(4, 4, 4, 5, 5, 5);
 const boxMat = new three.MeshStandardMaterial({
-  metalness: 0.7,
-  roughness: 0.2,
-  color: 0xffffff,
+  metalness: 1,
+  roughness: 0.3,
+  color: 0x808080,
   side: three.DoubleSide,
 })
 const boxMesh = new three.Mesh(box, boxMat);
@@ -56,18 +56,18 @@ wireMesh.scale.setScalar(1.001);
 // scene.add(hemilight);
 // hemilight.castShadow = true;
 
-// const pointlight = new three.PointLight(0xff0000, 4, 0, 2);
-// scene.add(pointlight);
-// pointlight.castShadow = true;
-// pointlight.position.set(-1.5, -1.5, -1.5);
+const pointlight = new three.PointLight(0xff0000, 1, 0, 2);
+scene.add(pointlight);
+pointlight.castShadow = true;
+pointlight.position.set(-10, -10, -10);
 
-const pointlight2 = new three.PointLight(0xffffff, 20, 0, 2);
+const pointlight2 = new three.PointLight(0xffffff, 10, 0, 2);
 scene.add(pointlight2);
 pointlight2.castShadow = true;
 pointlight2.position.set(1.8, 1.8, 1.8);
 
 const directionalLight = new three.DirectionalLight(0xffffff, 10);
-directionalLight.position.set(1, 1, 1);
+directionalLight.position.set(6, 6, 6);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
 

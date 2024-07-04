@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+.nav {
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+  background: black;
+  color: white;
+  padding: 10px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a:hover {
+  text-decoration: underline;
+}
