@@ -66,27 +66,21 @@ const tubeLines = new THREE.LineSegments(edges, lineMat);
 scene.add(tubeLines);
 
 const sphere = new THREE.SphereGeometry(0.1);
-const sphere2 = new THREE.SphereGeometry(0.2);
-const sphere3 = new THREE.SphereGeometry(0.3);
 const sphereMat = new THREE.MeshStandardMaterial({
-  color: 0x802020,
+  color: 0xff2020,
   metalness: 1,
   roughness: 0.5,
 });
 const sphereMesh = new THREE.Mesh(sphere, sphereMat);
-const sphereMesh2 = new THREE.Mesh(sphere2, sphereMat);
-const sphereMesh3 = new THREE.Mesh(sphere3, sphereMat);
 scene.add(sphereMesh);
-scene.add(sphereMesh2);
-scene.add(sphereMesh3);
 sphereMesh.castShadow = true;
 
-const pointlight = new THREE.PointLight(0xffffdd, 15, 0, 0);
+const pointlight = new THREE.PointLight(0xff9999, 15, 0, 0);
 scene.add(pointlight);
 pointlight.castShadow = true;
 
 const pointlight2 = new THREE.PointLight(0xffffff, 10, 0, 0);
-scene.add(pointlight2);
+// scene.add(pointlight2);
 pointlight2.castShadow = true;
 
 // Additional light to better illuminate the scene
@@ -116,11 +110,7 @@ function updateCameraAndLight(t) {
   // Update sphere position slightly ahead of the camera along the path
   const spherePos = tube.parameters.path.getPointAt((p + 0.01) % 1);
   sphereMesh.position.copy(spherePos);
-  sphereMesh2.position.copy(spherePos);
-  sphereMesh3.position.copy(spherePos);
-  sphereMesh.position.y += 0.6;
-  sphereMesh2.position.y -= 0.5;
-  sphereMesh3.position.x += 0.4;
+  sphereMesh.position.y -= 0.6;
 }
 
 function animate(t = 0) {
