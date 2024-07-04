@@ -75,12 +75,12 @@ const sphereMesh = new THREE.Mesh(sphere, sphereMat);
 scene.add(sphereMesh);
 sphereMesh.castShadow = true;
 
-const pointlight = new THREE.PointLight(0xff9999, 15, 0, 0);
+const pointlight = new THREE.PointLight(0xffffff, 2, 0, 0);
 scene.add(pointlight);
 pointlight.castShadow = true;
 
-const pointlight2 = new THREE.PointLight(0xffffff, 10, 0, 0);
-// scene.add(pointlight2);
+const pointlight2 = new THREE.PointLight(0xffffff, 20, 0, 0);
+scene.add(pointlight2);
 pointlight2.castShadow = true;
 
 // Additional light to better illuminate the scene
@@ -100,16 +100,15 @@ function updateCameraAndLight(t) {
 
   // Update point light position to match the camera position
   pointlight.position.copy(pos);
-  pointlight2.position.copy(pos);
 
   pointlight.position.y += 1;
-  pointlight.position.z -= 3;
-
-  pointlight2.position.z += 1;
+  pointlight.position.z += 3;
 
   // Update sphere position slightly ahead of the camera along the path
   const spherePos = tube.parameters.path.getPointAt((p + 0.01) % 1);
   sphereMesh.position.copy(spherePos);
+  pointlight2.position.copy(spherePos);
+  pointlight2.position.z -= 2;
   sphereMesh.position.y -= 0.6;
 }
 

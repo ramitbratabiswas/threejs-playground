@@ -2,7 +2,7 @@
   "name": "threejs-projects",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "playground.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
@@ -11,7 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@dimforge/rapier3d": "^0.13.1",
     "three": "^0.166.0"
   }
 }
