@@ -1,4 +1,4 @@
-# threejs playground
+# three.js playground
 A collection of mini three.js projects, each based on FreeCodeCamp's tutorial (https://www.youtube.com/watch?v=UMqNHi1GDAE).
 
 1. playground: consists of a sphere and a box and three different lights; allows the user to play around with different colours and intensities for the lights and textures for the sphere; uses the dat.gui library to create sliders and toggles
