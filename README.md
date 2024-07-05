@@ -7,3 +7,11 @@ A collection of mini three.js projects, each based on FreeCodeCamp's tutorial (h
 4. globe: a rotating 3D model of the earth
 
 work in progress: planning to try out more Three.js effects and use those for my portfolio site; will add more options to the playground, e.g adding and removing shapes, lights, etc.
+
+
+<img width="1440" alt="Screenshot 2024-07-05 at 12 08 59 AM" src="https://github.com/ramitbratabiswas/threejs-playground/assets/23477303/b6190114-e122-411a-a3d4-a360bb0e7520">
+
+<img width="1440" alt="Screenshot 2024-07-05 at 12 10 05 AM" src="https://github.com/ramitbratabiswas/threejs-playground/assets/23477303/bf273b18-1cd7-4850-b72d-f0530e9c7606">
+
+<img width="1440" alt="Screenshot 2024-07-05 at 12 10 32 AM" src="https://github.com/ramitbratabiswas/threejs-playground/assets/23477303/e78d0eb0-5396-4ef0-9040-b121a6d7fb7a">
+
