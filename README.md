@@ -5,3 +5,5 @@ A collection of mini three.js projects, each based on FreeCodeCamp's tutorial (h
 2. vortex: depicts a ball falling through a glowing vortex with the camera following along; involves post-processing with unreal bloom pass
 3. floating shapes: randomly generates 3D shapes and applies a changing transition effect on the scene
 4. globe: a rotating 3D model of the earth
+
+work in progress: planning to try out more Three.js effects and use those for my portfolio site; will add more options to the playground, e.g adding and removing shapes, lights, etc.
