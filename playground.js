@@ -29,7 +29,7 @@ controls.dampingFactor = 0.1;
 // Create geometries and materials
 let icos = new THREE.IcosahedronGeometry(0.8, 10);
 const mat = new THREE.MeshStandardMaterial({
-  color: 0x808080,
+  color: 0x9900ff,
   metalness: 0.5,
   roughness: 0.5,
 });
@@ -56,21 +56,18 @@ wireMesh.scale.setScalar(1.001);
 scene.add(wireMesh);
 
 // Add lights
-const hemilight = new THREE.HemisphereLight(0x202022, 0xa0afff);
-scene.add(hemilight);
-hemilight.castShadow = true;
 
-const pointlight = new THREE.PointLight(0xff0000, 1, 0, 2);
+const pointlight = new THREE.PointLight(0xff0000, 10, 0, 2);
 scene.add(pointlight);
 pointlight.castShadow = true;
 pointlight.position.set(-1.8, 1.8, -1.8);
 
-const pointlight2 = new THREE.PointLight(0xffffff, 1, 0, 2);
+const pointlight2 = new THREE.PointLight(0x0000ff, 10, 0, 2);
 scene.add(pointlight2);
 pointlight2.castShadow = true;
 pointlight2.position.set(1.8, 1.8, 1.8);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 10);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 directionalLight.position.set(6, 6, 6);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
